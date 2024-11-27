@@ -1,0 +1,7 @@
+# Activar la reescritura de URLs
+RewriteEngine On
+
+# Redirigir todo el tráfico a index.php (en la raíz del proyecto)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php [QSA,L]

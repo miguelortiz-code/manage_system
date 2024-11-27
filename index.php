@@ -1,1 +1,4 @@
-<h1>Hola mundo</h1>
+<?php
+
+include 'routes/router.php';
+$router->dispatch();
