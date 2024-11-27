@@ -26,12 +26,15 @@ $router->get('/dashboard', function () use ($views) {
     $views->render('views/pages/dashboard.php');
 });
 
-$router->get('recover-password', function () {
+$router->get('/recover-password', function () {
    include 'views/pages/recover_password.php';
 });
 
 // MÉTODOS POST
-
 $router->post('/login', function () use ($authController) {
     $authController->login();
+});
+
+$router->post('/recover-password', function () use ($authController) {
+    $authController->recoverPassword();
 });

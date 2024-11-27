@@ -137,4 +137,25 @@ class AuthController {
         $this->alert->setAlert('success', '¡Inicio de sesión exitoso! Bienvenido ' . $user['fullname_user']);
         header('Location: /dashboard');
     }
+
+    public function recoverPassword(){
+        if(isset($_POST['submit'])){
+            if(isset($_POST['email'])){
+                $email = htmlspecialchars(trim($_POST['email']), ENT_QUOTES, 'UTF-8');
+                // echo "El correo para la recuperacion de contraseña es: $email";
+                
+                if(empty($email)){
+                    $this->alert->setAlert('danger','El correo electronico es obligatorio');
+                    header('Location: /recover-password');
+                    exit;
+                }
+
+                if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                    $this->alert->setAlert('danger', 'El correo ingresado no es válido');
+                    header('Location: /recover-password');
+                    exit;
+                }
+            }
+        }
+    }
 }
