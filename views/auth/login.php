@@ -39,6 +39,11 @@
                 <input type="password" id="password" name="password" placeholder="Contraseña" class="input__full">
             </div>
 
+            <div class="container__checkbox">
+                <input type="checkbox" id="checkbox" name="checkbox" placeholder="Contraseña" class="input__checkbox">
+                <label for="checkbox" class="label__checkbox">Recordar correo electrónico</label>
+            </div>
+
             <div class="container__input container__input--submit">
             <span class="material-symbols-outlined input__icon input__icon--submit">login</span>
                 <input type="submit" name="submit" value="Ingresar" class="input__full input__full--submit">

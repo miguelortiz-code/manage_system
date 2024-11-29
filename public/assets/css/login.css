@@ -33,7 +33,7 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 150px;
+    gap: 200px;
     background: var(--background-container);
     border-radius: 10px;
     box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.25), -1px -1px 5px 0 rgba(0, 0, 0, 0.25);
@@ -84,6 +84,30 @@ body{
     color: #ccc;
 }
 
+
+.container__checkbox{
+    display: flex;
+    align-items: center;
+    gap: .50rem;
+}
+
+.container__checkbox .input__checkbox{
+    width: 1.5rem;
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+}
+
+.container__checkbox .input__checkbox + label{
+    color: #ccc;
+}
+
+
+.container__checkbox .input__checkbox:checked + label{
+    color: #082563;
+}
+
+
 .container__input--submit{
     display: flex;
     align-items: center;
@@ -102,7 +126,7 @@ body{
 
 .input__icon{
     position: absolute;
-    top:25px;
+    top:20px;
     left: 12px;
     display: block;
     max-width: 24px;
