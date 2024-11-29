@@ -1,0 +1,234 @@
+:root{
+    --background-color: #FFF;
+    --text-color-title: #053D4E;
+    --text-color: #32363B;
+    --icon-color: #32363B;
+    --menu-color: #707780;
+
+    --text-selected-color: #355CC0;
+    --background-selected: #EBF0FF;
+    --background-hover: #F7F9FA;
+
+    --border-color: #E6E9ED;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+.header{
+    z-index: 200;
+    width: 100%;
+    background: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.container__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0.45rem 2rem 0.45rem 1.27rem;
+}
+
+
+.header__icon{
+    cursor: pointer;
+    width: 1.8rem;
+}
+
+.header__title{
+    text-transform: uppercase;
+}
+
+.nav__list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: .30rem;
+    cursor: pointer;
+}
+
+.nav__list .header__profile{
+    width: 2.5rem;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.nav__list .arrow{
+    transition: transform .6s;
+}
+
+.arrow.rotate{
+    transform: rotate(180deg);
+}
+
+/* Estilo inicial del dropdown */
+.nav__dropdown {
+    height: 0;
+    overflow: hidden; /* Esconde contenido cuando height es 0 */
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    list-style: none;
+    width: 220px;
+    transition: height 0.4s ease, opacity 0.3s ease;
+    opacity: 0; /* Invisible cuando está cerrado */
+}
+
+/* Cuando está abierto */
+.nav__dropdown.open {
+    opacity: 1; /* Visible cuando está abierto */
+}
+
+/* Estilo de las opciones del dropdown */
+.list__dropdown {
+    display: flex;
+    align-items: center;
+    padding: 0.90rem;
+    transition: background 0.2s;
+}
+
+.list__dropdown:hover {
+    background-color: var(--background-hover);
+}
+
+.nav__link__dropdown {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 100%;
+}
+
+.nav__link__dropdown .dropdown__icon {
+    max-width: 20px;
+    object-fit: cover;
+}
+
+
+.list__dropdown .logout{
+    margin-top: 10px;
+}
+
+.link__name {
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+
+/* SIDEBAR */
+.sidebar{
+    margin-top: 3rem;
+    width: 18.75rem;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1.1rem 0;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    background-color: var(--background-color);
+    transition: width .6s ease-in-out;
+}
+
+.sidebar.menu__toggle{
+    width: 4rem;
+}
+
+.sidebar .sidebar__img{
+    width: 1.6rem;
+}
+
+.sidebar .nav__link{
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 0.9rem 0.7rem;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--text-color);
+    text-transform: capitalize;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.sidebar .nav__link .title{
+    color: var(--text-color-title);
+    text-transform: uppercase;
+}
+
+.sidebar .nav__link:hover{
+    background-color: var(--background-hover);
+}
+
+.sidebar .nav__link .right{
+    margin-left: 110px;
+}
+.sidebar .nav__link.selected{
+    color: var(--text-selected-color);
+    background-color: var(--background-selected);
+}
+
+.submenu{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.main{
+    margin-top: 4rem;
+    margin-left: 20rem;
+    padding: 2rem;
+    transition: margin-left .6s ease-in-out;
+}
+
+.main.main__toggle{
+    margin-left: 4rem;
+}
+
+
+/* Media query */
+@media screen and (max-width: 500px) {
+    .sidebar{
+        width: 0;
+    }
+    
+    .main{
+        margin-left: 0;
+    }
+
+    .main.main__toggle{
+        margin-left: 0;
+    }
+}

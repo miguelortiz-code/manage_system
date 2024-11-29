@@ -1,0 +1,92 @@
+:root {
+    /* Background colors for alerts */
+    --background-alert-info: #d1ecf1;
+    --background-alert-danger: #f8d7da;
+    --background-alert-warning: #fff3cd;
+    --background-alert-success: #d4edda;
+
+    /* Text colors for alerts */
+    --message-alert-info: #0c5460;
+    --message-alert-danger: #721c24;
+    --message-alert-warning: #856404;
+    --message-alert-success: #155724;
+
+    /* Border colors for alerts*/
+    --border-alert-info: #d1ecf1;
+    --border-alert-danger: #721c24;
+    --border-alert-warning: #fff3cd;
+    --border-alert-success: #d4edda;
+
+}
+
+.alert {
+    width: 450px;
+    padding: 12px 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform .6s;
+}
+.alert__icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.alert__message {
+    flex: 1;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.alert__close {
+    font-size: 20px;
+    font-weight: bold;
+    color: inherit;
+    cursor: pointer;
+    padding: 0 5px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    line-height: 1;
+    border: none;
+    background: none;
+}
+.alert-info {
+    background: var(--background-alert-info);
+    color: var(--message-alert-info);
+    border: 1px solid var(--border-alert-info);
+}
+
+.alert-danger {
+    background: var(--background-alert-danger);
+    color: var(--message-alert-danger);
+    border: 1px solid var(--border-alert-danger);
+}
+
+.alert-warning {
+    background: var(--background-alert-warning);
+    color: var(--message-alert-warning);
+    border: 1px solid var(--border-alert-warning);
+}
+
+.alert-success {
+    background: var(--background-alert-success);
+    color: var(--message-alert-success);
+    border: 1px solid var(--border-alert-success);
+}
+
+
+.alert.show{
+    transform: scale(1.1);
+}
+.alert.hidden{
+    transform: scale(0);
+}

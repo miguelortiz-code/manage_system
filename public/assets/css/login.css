@@ -100,16 +100,17 @@ body{
     font-weight: 500;
 }
 
-.input__image{
+.input__icon{
     position: absolute;
     top:25px;
     left: 12px;
     display: block;
     max-width: 24px;
     cursor: pointer;
+    color: #CCC;
 }
 
-.input__image--submit{
+.input__icon--submit{
     position: absolute;
     top: 11px;
     left: 135px;

@@ -34,3 +34,5 @@ class Router{
 $router = new Router(); // Creando la instancia del enrrutador
 
 require_once 'auth/auth.routes.php';
+require_once 'users/users.routes.php';
+require_once 'dashboard/dashboard.routes.php';

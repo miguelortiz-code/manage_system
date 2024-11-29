@@ -8,9 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!--GOOGLE ICONS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"/>
     <!--FAVICON-->
     <link rel="shortcut icon" href="/public/assets/images/favicon.ico" type="image/x-icon">
+    <!--STYLES-->
     <link rel="stylesheet" href="/public/assets/css/recover_password.css">
+    <link rel="stylesheet" href="/public/assets/css/alerts.css">
     <title>Recuperar Contraseña | Manage System</title>
 </head>
 
@@ -25,11 +29,11 @@
             <div class="container__input">
                 <label for="email" class="form__label">Dirección de correo electrónico</label>
                 <input type="email" id="email" name="email" class="input__full" placeholder="Ingresa tú correo electrónico">
-                <img src="/public/assets/images/icons/email.svg" alt="Email Icon" class="input__image">
+                <span class="material-symbols-outlined input__icon">mail</span>
             </div>
             <div class="container__input">
                 <input type="submit" class="input__full input__full--submit" value="Enviar enlace de reestablecimiento" name="submit">
-                <img src="/public/assets/images/icons/send.svg" alt="Send Icon" class="input__image--submit">
+                <span class="material-symbols-outlined input__icon input__icon--submit">send</span>
             </div>
             <a href="/" class="form__link">Volver al inicio</a>
         </form>
