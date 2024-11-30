@@ -8,11 +8,16 @@
             <ul class="nav_item">
                 <li class="nav__list" id="nav__list">
                     <img src="/public/assets/images/profile.png" alt="imagen de usuario" class="header__profile">
-                    <p class="header__name">Miguel Angel</p>
-                    <span class="material-symbols-outlined arrow" id="arrow">keyboard_arrow_up</span>
 
                     <ul class="nav__dropdown" id="nav__dropdown">
 
+                        <li class="list__dropdown list__dropdown--profile ">
+                            <img src="/public/assets/images/profile.png" alt="imagen de usuario" class="header__profile">
+                            <p class="header__name">Miguel Angel</p>
+                        </li>
+
+                        <span class="line__dropdown"></span>
+                        
                         <li class="list__dropdown">
                             <a href="/profile" class="nav__link nav__link__dropdown nav__link__sidebar" data-title="Mi perfil">
                                 <span class="material-symbols-outlined dropdown__icon">person</span>
@@ -26,6 +31,8 @@
                                 <span class="link__name">cambiar contraseña</span>
                             </a>
                         </li>
+
+                        <span class="line__dropdown"></span>
 
                         <li class="list__dropdown">
                             <a href="/logout" class="nav__link nav__link__dropdown logout">

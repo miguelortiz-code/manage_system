@@ -4,12 +4,14 @@ require_once 'models/auth/auth.model.php';
 require_once 'controllers/alerts/alerts.controller.php';
 require_once 'middleware/global.middleware.php';
 
-class AuthController {
+class AuthController
+{
     private $model;
     private $alert;
     private $middleware;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->model = new AuthModel();
         $this->alert = new AlertsController();
         $this->middleware = new GlobalSession();
@@ -24,7 +26,8 @@ class AuthController {
         date_default_timezone_set('America/Bogota');
     }
 
-    public function login() {
+    public function login()
+    {
         if (isset($_POST['submit'])) {
             if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['csfr_token'])) {
                 $email = htmlspecialchars(trim($_POST['email']), ENT_QUOTES, 'UTF-8');
@@ -53,6 +56,8 @@ class AuthController {
 
                 // Obtener usuario
                 $user = $this->model->getUserByEmail($email);
+                // Destruir cualquier posible sesión previa para evitar retroceso
+                session_regenerate_id(true); // Regenerar el ID de sesión
                 if (!$user) {
                     $this->alert->setAlert('danger', 'El usuario no existe.');
                     header('Location: /');
@@ -88,11 +93,13 @@ class AuthController {
         }
     }
 
-    private function validateCSRFToken($token) {
+    private function validateCSRFToken($token)
+    {
         return $this->model->validateTokenCSFR($_SESSION['csfr_token'], $token);
     }
 
-    private function handleFailedLogin($user) {
+    private function handleFailedLogin($user)
+    {
         $attempts = $user['login_attempts'] + 1;
 
         // Validar si debe bloquear la cuenta después de 10 intentos fallidos
@@ -119,9 +126,10 @@ class AuthController {
         $this->model->logLoginAttempt($user['id_user'], $_SERVER['REMOTE_ADDR'], false);
 
         header('Location: /');
+        exit;
     }
 
-    private function handleSuccessfulLogin($user) {
+    private function handleSuccessfulLogin($user){
         $_SESSION['user_id'] = $user['id_user'];
         $_SESSION['user_name'] = $user['fullname_user'];
         $_SESSION['user_lastname'] = $user['lastname_user'];
@@ -136,21 +144,23 @@ class AuthController {
 
         $this->alert->setAlert('success', '¡Inicio de sesión exitoso! Bienvenido ' . $user['fullname_user']);
         header('Location: /dashboard');
+        exit;
     }
 
-    public function recoverPassword(){
-        if(isset($_POST['submit'])){
-            if(isset($_POST['email'])){
+    public function recoverPassword()
+    {
+        if (isset($_POST['submit'])) {
+            if (isset($_POST['email'])) {
                 $email = htmlspecialchars(trim($_POST['email']), ENT_QUOTES, 'UTF-8');
                 // echo "El correo para la recuperacion de contraseña es: $email";
-                
-                if(empty($email)){
-                    $this->alert->setAlert('danger','El correo electronico es obligatorio');
+
+                if (empty($email)) {
+                    $this->alert->setAlert('danger', 'El correo electronico es obligatorio');
                     header('Location: /recover-password');
                     exit;
                 }
 
-                if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                     $this->alert->setAlert('danger', 'El correo ingresado no es válido');
                     header('Location: /recover-password');
                     exit;
@@ -158,4 +168,15 @@ class AuthController {
             }
         }
     }
+
+    public function logout() {
+        // Primero destruir la sesión
+        session_unset();  // Elimina todas las variables de la sesión
+        session_destroy();  // Destruye la sesión
+        
+        // Redirigir a la página de inicio
+        header('Location: /');
+        exit;
+    }
+    
 }

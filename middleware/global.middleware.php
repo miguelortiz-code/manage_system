@@ -6,4 +6,11 @@ class GlobalSession {
             session_start();
         }
     }
+
+    public function checkAutentication(){
+        if(!$_SESSION['user_id']){
+            header('Location: /');
+            exit;
+        }
+    }
 }

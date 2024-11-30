@@ -1,0 +1,1 @@
+<h1>Aquí estará la infomración de manage system</h1>
