@@ -13,7 +13,7 @@
             <li class="list__item">
                 <a href="/dashboard" title="Inicio" class="nav__link nav__link__sidebar" data-title="Dashboard">
                     <span class="material-symbols-outlined">home</span>
-                    <span class="name__link title">dashboard</span>
+                    <span class="name__link">dashboard</span>
                 </a>
             </li>
 

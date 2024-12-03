@@ -1,6 +1,6 @@
 <header class="header">
     <div class="container__header">
-    <span class="material-symbols-outlined header__icon" id="header_icon">menu</span>
+        <span class="material-symbols-outlined header__icon" id="header_icon">menu</span>
 
         <h3 class="header__title" id="header_title"></h3>
 
@@ -12,21 +12,24 @@
                     <ul class="nav__dropdown" id="nav__dropdown">
 
                         <li class="list__dropdown list__dropdown--profile ">
-                            <img src="/public/assets/images/profile.png" alt="imagen de usuario" class="header__profile">
+                            <img src="/public/assets/images/profile.png" alt="imagen de usuario"
+                                class="header__profile">
                             <p class="header__name">Miguel Angel</p>
                         </li>
 
                         <span class="line__dropdown"></span>
-                        
+
                         <li class="list__dropdown">
-                            <a href="/profile" class="nav__link nav__link__dropdown nav__link__sidebar" data-title="Mi perfil">
+                            <a href="/profile" class="nav__link nav__link__dropdown nav__link__sidebar"
+                                data-title="Mi perfil">
                                 <span class="material-symbols-outlined dropdown__icon">person</span>
                                 <span class="link__name">ver perfil</span>
                             </a>
                         </li>
 
                         <li class="list__dropdown">
-                            <a href="/change-password" class="nav__link nav__link__dropdown nav__link__sidebar" data-title="Cambio de contraseña">
+                            <a href="/change-password" class="nav__link nav__link__dropdown nav__link__sidebar"
+                                data-title="Cambio de contraseña">
                                 <span class="material-symbols-outlined dropdown__icon">key</span>
                                 <span class="link__name">cambiar contraseña</span>
                             </a>
@@ -34,7 +37,7 @@
 
                         <span class="line__dropdown"></span>
 
-                        <li class="list__dropdown">
+                        <li class="list__dropdown list__dropdown--logout">
                             <a href="/logout" class="nav__link nav__link__dropdown logout">
                                 <span class="material-symbols-outlined dropdown__icon">logout</span>
                                 <span class="link__name">cerrar sesión</span>
