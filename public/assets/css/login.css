@@ -22,7 +22,7 @@ body{
     height: 100vh;
     background: var(--background-body);
     display: grid;
-    align-items: center;
+    align-content: center;
     font-family: "Poppins", sans-serif;
 }
 
