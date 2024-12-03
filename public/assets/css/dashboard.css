@@ -69,13 +69,7 @@ body{
     border-radius: 50%;
 }
 
-.nav__list .arrow{
-    transition: transform .6s;
-}
 
-.arrow.rotate{
-    transform: rotate(180deg);
-}
 
 /* Estilo inicial del dropdown */
 .nav__dropdown {
@@ -207,14 +201,6 @@ body{
 .sidebar .nav__link.selected{
     color: var(--text-selected-color);
     background-color: var(--background-selected);
-}
-
-.submenu{
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 

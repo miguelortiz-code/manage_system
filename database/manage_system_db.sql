@@ -81,23 +81,3 @@ CREATE TABLE modules(
     url_module VARCHAR(255),
     PRIMARY KEY (id_module)
 );
-
-CREATE TABLE role_modules (
-    id INT NOT NULL AUTO_INCREMENT,
-    id_rol INT NOT NULL,
-    id_module INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (id_rol) REFERENCES roles (id_rol),
-    FOREIGN KEY (id_module) REFERENCES modules (id_module)
-);
-
--- Nueva tabla para historial de intentos de inicio de sesión
-CREATE TABLE login_attempts (
-    id INT NOT NULL AUTO_INCREMENT,
-    id_user INT,
-    ip_address VARCHAR(50),
-    attempt_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    successful BOOLEAN NOT NULL DEFAULT 0,
-    PRIMARY KEY (id),
-    FOREIGN KEY (id_user) REFERENCES users (id_user)
-);

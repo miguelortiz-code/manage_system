@@ -33,6 +33,7 @@ class AuthController
                 $email = htmlspecialchars(trim($_POST['email']), ENT_QUOTES, 'UTF-8');
                 $password = htmlspecialchars(trim($_POST['password']), ENT_QUOTES, 'UTF-8');
                 $token = $_POST['csfr_token'];
+                $rememberMe = isset($_POST['checkbox']); // Verificar si el checkbox está marcado
 
                 // Validar token CSRF
                 if (!$this->validateCSRFToken($token)) {
@@ -87,6 +88,15 @@ class AuthController
                     exit;
                 }
 
+                // Manejo de la cookie "recordar correo electrónico"
+                if ($rememberMe) {
+                    setcookie('remember_email', $email, time() + (30 * 24 * 60 * 60), "/"); // Guardar por 30 días
+                } else {
+                    if (isset($_COOKIE['remember_email'])) {
+                        setcookie('remember_email', '', time() - 3600, "/"); // Eliminar cookie
+                    }
+                }
+
                 // Iniciar sesión
                 $this->handleSuccessfulLogin($user);
             }
@@ -129,7 +139,8 @@ class AuthController
         exit;
     }
 
-    private function handleSuccessfulLogin($user){
+    private function handleSuccessfulLogin($user)
+    {
         $_SESSION['user_id'] = $user['id_user'];
         $_SESSION['user_name'] = $user['fullname_user'];
         $_SESSION['user_lastname'] = $user['lastname_user'];
@@ -169,14 +180,15 @@ class AuthController
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         // Primero destruir la sesión
         session_unset();  // Elimina todas las variables de la sesión
         session_destroy();  // Destruye la sesión
-        
+
         // Redirigir a la página de inicio
         header('Location: /');
         exit;
     }
-    
+
 }

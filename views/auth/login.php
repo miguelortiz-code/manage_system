@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!--GOOGLE ICONS-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"/>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
     <!--FAVICON-->
     <link rel="shortcut icon" href="/public/assets/images/favicon.ico" type="image/x-icon">
     <!--STYLES-->
@@ -24,13 +25,15 @@
 
     <div class="container">
         <form action="/login" method="post" class="container__form" id="form">
-            <input type="hidden" name="csfr_token" value="<?php echo  htmlspecialchars(trim($_SESSION['csfr_token']), ENT_QUOTES, 'UTF-8') ?>">
-            
+            <input type="hidden" name="csfr_token"
+                value="<?php echo  htmlspecialchars(trim($_SESSION['csfr_token']), ENT_QUOTES, 'UTF-8') ?>">
+
             <h1 class="form__title">Inicio de sesión</h1>
             <div class="container__input">
                 <label for="email" class="form__label">Correo electrónico</label>
                 <span class="material-symbols-outlined input__icon">account_circle</span>
-                <input type="email" id="email" name="email" placeholder="Correo Electrónico" class="input__full">
+                <input type="email" id="email" name="email" placeholder="Correo Electrónico" class="input__full"
+                    value="<?php echo isset($_COOKIE['remember_email']) ? htmlspecialchars($_COOKIE['remember_email'], ENT_QUOTES, 'UTF-8') : ''; ?>">
             </div>
 
             <div class="container__input">
@@ -45,7 +48,7 @@
             </div>
 
             <div class="container__input container__input--submit">
-            <span class="material-symbols-outlined input__icon input__icon--submit">login</span>
+                <span class="material-symbols-outlined input__icon input__icon--submit">login</span>
                 <input type="submit" name="submit" value="Ingresar" class="input__full input__full--submit">
             </div>
         </form>
@@ -53,4 +56,5 @@
     </div>
 </body>
 <script src="/public/assets/js/login.js"></script>
+
 </html>
