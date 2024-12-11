@@ -30,6 +30,7 @@ CREATE TABLE users(
     lastname_user VARCHAR(200),
     phone_user VARCHAR(100),
     email_user VARCHAR(200) UNIQUE,
+    address_user VARCHAR(150),
     password_user VARCHAR(200),
     image_user VARCHAR(255) DEFAULT 'public/assets/images/user.png',
     date_created_user TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -46,10 +47,10 @@ CREATE TABLE users(
     FOREIGN KEY (id_rol) REFERENCES roles (id_rol)
 );
 
-INSERT INTO users (fullname_user, lastname_user, email_user, phone_user, password_user, id_state, id_rol, super_root, admin_parent) 
+INSERT INTO users (fullname_user, lastname_user, email_user, address_user, phone_user, password_user, id_state, id_rol, super_root, admin_parent) 
 VALUES
-('Admin', 'Admin', 'admin@gmail.com', '5555555', '$2b$12$9QNDkMSIWf/Q4Bt6SQmeh.1imIr8PLuHtQiQw88Y2mL9.ELOR3wDu', 1, 1, 1, 0),
-('Usuario', 'Usuario', 'usuario@gmail.com', '5555555', '$2b$12$9QNDkMSIWf/Q4Bt6SQmeh.1imIr8PLuHtQiQw88Y2mL9.ELOR3wDu', 1, 2, 0, 1);
+('Admin', 'Admin', 'admin@gmail.com', 'CRA 5 A # 32 - 60', '5555555', '$2b$12$9QNDkMSIWf/Q4Bt6SQmeh.1imIr8PLuHtQiQw88Y2mL9.ELOR3wDu', 1, 1, 1, 0),
+('Usuario', 'Usuario', 'usuario@gmail.com', 'CRA 5 A # 32 - 60', '5555555', '$2b$12$9QNDkMSIWf/Q4Bt6SQmeh.1imIr8PLuHtQiQw88Y2mL9.ELOR3wDu', 1, 2, 0, 1);
 
 -- Tabla logs para las acciones del usuario
 CREATE TABLE logs(

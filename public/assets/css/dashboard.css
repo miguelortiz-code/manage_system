@@ -42,12 +42,12 @@ body{
 }
 
 .header{
-    z-index: 200;
     width: 100%;
     background: var(--background-header);
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 200;
 }
 
 .container__header{
@@ -142,6 +142,7 @@ body{
 
 .list__dropdown--profile{
     cursor: default;
+    text-transform: capitalize;
 }
 
 .list__dropdown--profile .header__profile{
@@ -248,17 +249,26 @@ body{
     margin-left: 4rem;
 }
 
-footer{
-    background-color: var(--background-header);
-    color: var(--text-color-title);
+.footer{
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    text-align: right;
-    padding: 0.23rem 1.75rem 0.23rem 0;
+    background-color: var(--background-header);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
 }
 
+.footer .footer__paragraph{
+    color: var(--icon-color);
+    text-align: center;
+}
+
+.footer .footer__paragraph.paragraph__toogle{
+    width: 4rem;
+}
 
 /* Media query */
 @media screen and (max-width: 500px) {

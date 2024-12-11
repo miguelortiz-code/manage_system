@@ -1,3 +1,10 @@
+<?php
+// Obtener la imagen del usuario o usar la predeterminada
+$userImage = isset($_SESSION['image_user']) ? htmlspecialchars($_SESSION['image_user'], ENT_QUOTES, 'UTF-8') : '/public/assets/images/profile.png';
+$userName = isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name'], ENT_QUOTES, 'UTF-8') : 'Usuario';
+?>
+
+
 <header class="header">
     <div class="container__header">
         <span class="material-symbols-outlined header__icon" id="header_icon">menu</span>
@@ -7,14 +14,13 @@
         <nav class="header__nav">
             <ul class="nav_item">
                 <li class="nav__list" id="nav__list">
-                    <img src="/public/assets/images/profile.png" alt="imagen de usuario" class="header__profile">
+                    <img src="<?php echo $userImage ?>" alt="imagen de usuario" class="header__profile">
 
                     <ul class="nav__dropdown" id="nav__dropdown">
 
                         <li class="list__dropdown list__dropdown--profile ">
-                            <img src="/public/assets/images/profile.png" alt="imagen de usuario"
-                                class="header__profile">
-                            <p class="header__name">Miguel Angel</p>
+                            <img src="<?php echo $userImage ?>" alt="imagen de usuario" class="header__profile">
+                            <p class="header__name"><?php echo $userName ?></p>
                         </li>
 
                         <span class="line__dropdown"></span>

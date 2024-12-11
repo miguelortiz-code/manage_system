@@ -10,6 +10,6 @@ class ViewsContent {
         $views = $viewPath;
 
         // Carga la plantilla principal
-        include  'views/includes/template.dashboard.php';
+        $views = include  'views/includes/template.dashboard.php';
     }
 }

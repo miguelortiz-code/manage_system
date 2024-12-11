@@ -7,6 +7,7 @@ const nav_links = document.querySelectorAll('.nav__link__sidebar');
 const header_icon = document.getElementById('header_icon');
 const main = document.getElementById('main');
 const header_title = document.getElementById('header_title');
+const footer = document.getElementById('footer');
 // Funcionalidad del submenu
 const submenuToggle = document.querySelector('.nav__link__submenu');
 const submenu = document.querySelector('.submenu');
@@ -40,6 +41,7 @@ dropdownToggle.addEventListener('click', () => {
 header_icon.addEventListener('click', () => {
   sidebar.classList.toggle('menu__toggle');
   main.classList.toggle('main__toggle');
+  footer.classList.toggle('paragraph__toogle');
 });
 
 // Restaurar el estado seleccionado al cargar la página

@@ -1,0 +1,58 @@
+.container{
+    width: 100%;
+    margin: 0 auto;
+    margin: 0 auto;
+}
+
+.table{
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+    white-space: nowrap;
+    border: 1px solid #000;
+
+    cursor:pointer;
+}
+.table tr:hover{
+    background-color: #CCCCCC40;
+}
+th{
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.actions a{
+    display: block;
+    text-decoration: none;
+}
+
+.actions .icon{
+    max-width: 1.5rem;
+    object-fit: cover;
+    cursor: pointer;
+
+}
+
+.update{
+    background-color: #082b63;
+    color: #fff;
+}
+
+.delete{
+    background-color: #be232b;
+    color: #fff;
+}
+.status{
+    text-transform: capitalize;
+}

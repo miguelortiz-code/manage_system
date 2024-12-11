@@ -15,6 +15,7 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/public/assets/css/alerts.css">
     <link rel="stylesheet" href="/public/assets/css/dashboard.css">
+    <link rel="stylesheet" href="/public/assets/css/users.css">
     <title>Dashboard | Manage System</title>
 </head>
 
@@ -36,6 +37,7 @@
 
 
     <script src="/public/assets/js/dashboard.js"></script>
+    <script src="/public/assets/js/crudUser.js"></script>
 </body>
 
 </html>

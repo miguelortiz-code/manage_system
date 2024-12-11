@@ -144,7 +144,7 @@ class AuthController
         $_SESSION['user_id'] = $user['id_user'];
         $_SESSION['user_name'] = $user['fullname_user'];
         $_SESSION['user_lastname'] = $user['lastname_user'];
-        $_SESSION['user_image'] = $user['image_user'];
+        $_SESSION['image_userimage_userimage_userimage_userimage_userimage_user'] = $user['image_user'];
         $_SESSION['csfr_token'] = $this->model->generateTokenCSFR();
 
         // Reiniciar intentos fallidos
