@@ -33,16 +33,6 @@ $userName = isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_nam
                             </a>
                         </li>
 
-                        <li class="list__dropdown">
-                            <a href="/change-password" class="nav__link nav__link__dropdown nav__link__sidebar"
-                                data-title="Cambio de contraseña">
-                                <span class="material-symbols-outlined dropdown__icon">key</span>
-                                <span class="link__name">cambiar contraseña</span>
-                            </a>
-                        </li>
-
-                        <span class="line__dropdown"></span>
-
                         <li class="list__dropdown list__dropdown--logout">
                             <a href="/logout" class="nav__link nav__link__dropdown logout">
                                 <span class="material-symbols-outlined dropdown__icon">logout</span>
