@@ -28,7 +28,22 @@
                 <a href="/settings" title="Configuración" class="nav__link nav__link__sidebar"
                     data-title="Configuración">
                     <span class="material-symbols-outlined">settings</span>
-                    <span class="name__link">configuracion</span>
+                    <span class="name__link">configuración</span>
+                </a>
+            </li>
+
+            <li class="list__item">
+                <a href="/permissions" title="Permisos" class="nav__link nav__link__sidebar"
+                    data-title="Permisos">
+                    <span class="material-symbols-outlined">folder_managed</span>
+                    <span class="name__link">Permisos</span>
+                </a>
+            </li>
+            <li class="list__item">
+                <a href="/assign-permissions" title="Asignar" class="nav__link nav__link__sidebar"
+                    data-title="Asignar">
+                    <span class="material-symbols-outlined">folder_supervised</span>
+                    <span class="name__link">Asignar permisos</span>
                 </a>
             </li>
         </ul>

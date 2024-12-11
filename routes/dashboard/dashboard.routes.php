@@ -10,7 +10,7 @@ $middleware = new GlobalSession();
 // Creando rutas
 $router->get('/dashboard', function () use($views, $middleware) {
     $middleware->checkAutentication(); // Verifica que el usuario está autenticado
-    $views->render('views/pages/dashboard.php');
+    $views->render('views/dashboard/dashboard.php');
 });
 
 $router->get('/settings', function() use($views, $middleware){
@@ -18,7 +18,12 @@ $router->get('/settings', function() use($views, $middleware){
     $views->render('views/pages/account.php');
 });
 
-$router->get('/home', function () use($views, $middleware){
+$router->get('/permissions', function () use($views, $middleware){
     $middleware->checkAutentication(); // Verifica que el usuario está autenticado
-    $views->render('views/pages/home.php');
+    $views->render('views/dashboard/permission.php');
+});
+
+$router->get('/assign-permissions', function () use($views, $middleware){
+    $middleware->checkAutentication(); // Verifica que el usuario está autenticado
+    $views->render('views/dashboard/assign.permissions.php');
 });
